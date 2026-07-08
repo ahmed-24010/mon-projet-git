@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>My ANSADE - Termes et Conditions</title>
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background-color: #F6F8F7;
+      color: #1a1a1a;
+      line-height: 1.7;
+      padding: 20px 16px 40px;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ========== CONTAINER ========== */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* ========== LANGUAGE SELECTOR ========== */
+    .lang-selector {
+      display: flex;
+      background: #e8ebe9;
+      border-radius: 10px;
+      padding: 3px;
+      margin-bottom: 28px;
+      direction: ltr;
+      overflow: hidden;
+    }
+
+    .lang-btn {
+      flex: 1;
+      border: none;
+      background: transparent;
+      color: #555;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 10px 4px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      font-family: inherit;
+    }
+
+    .lang-btn.active {
+      background: #007A33;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 122, 51, 0.3);
+    }
+
+    .lang-btn:active:not(.active) {
+      background: #d0d5d2;
+    }
+
+    /* ========== HEADER ========== */
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .header-logo {
+      width: 100px;
+      height: auto;
+      margin-bottom: 12px;
+      object-fit: contain;
+    }
+
+    .header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #007A33;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .header .last-update {
+      font-size: 13px;
+      color: #888;
+      font-weight: 400;
+    }
+
+    /* ========== LANGUAGE VERSIONS ========== */
+    .lang-version {
+      display: none;
+    }
+
+    .lang-version.visible {
+      display: block;
+    }
+
+    /* ========== ARABIC SPECIFICS ========== */
+    .lang-ar {
+      direction: rtl;
+      text-align: right;
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .lang-fr {
+      direction: ltr;
+      text-align: left;
+    }
+
+    /* ========== CARDS ========== */
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 8px 28px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #007A33;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card ul {
+      list-style: disc;
+      padding-inline-start: 22px;
+      font-size: 14px;
+      color: #444;
+      margin-top: 6px;
+    }
+
+    .card ul li {
+      margin-bottom: 6px;
+    }
+
+    .card ul li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      text-align: center;
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid #e0e4e2;
+      font-size: 12px;
+      color: #999;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 480px) {
+      body {
+        padding: 14px 12px 32px;
+      }
+
+      .header h1 {
+        font-size: 19px;
+      }
+
+      .card {
+        padding: 18px 18px;
+        border-radius: 12px;
+      }
+
+      .card-title {
+        font-size: 15px;
+      }
+
+      .lang-btn {
+        font-size: 14px;
+        padding: 9px 4px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .header-logo {
+        width: 90px;
+        height: auto;
+      }
+
+      .header h1 {
+        font-size: 17px;
+      }
+
+      .card {
+        padding: 14px 14px;
+      }
+
+      .card p, .card ul {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ========== LANGUAGE SELECTOR ========== -->
+    <div class="lang-selector" role="tablist" aria-label="Sélecteur de langue">
+      <button class="lang-btn active" data-lang="ar" role="tab" aria-selected="true" aria-controls="content-ar">العربية</button>
+      <button class="lang-btn" data-lang="fr" role="tab" aria-selected="false" aria-controls="content-fr">FR</button>
+    </div>
+
+    <!-- ========== HEADER ========== -->
+    <div class="header">
+      <img
+        class="header-logo"
+        src="logo.png"
+        alt="Logo ANSADE"
+        loading="lazy"
+      >
+      <h1 id="page-title">الشروط والأحكام</h1>
+      <p class="last-update" id="last-update">آخر تحديث: يوليو 2026</p>
+    </div>
+
+    <!-- ========== VERSION ARABE ========== -->
+    <div id="content-ar" class="lang-version lang-ar visible" role="tabpanel">
+
+      <div class="card">
+        <div class="card-title">مرحبًا بكم في تطبيق My ANSADE</div>
+        <p>تم تطوير تطبيق My ANSADE بواسطة شركة selamPay لصالح الوكالة الوطنية للإحصاء والديموغرافيا والتحليل الاقتصادي (ANSADE).</p>
+        <p>ويتيح التطبيق للمستخدمين الوصول إلى الخدمات الرقمية والمنشورات والإحصائيات والاستبيانات والمعلومات الرسمية التي توفرها الوكالة.</p>
+        <p>وباستخدامك لهذا التطبيق فإنك توافق على الالتزام بهذه الشروط والأحكام.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">١. قبول الشروط والأحكام</div>
+        <p>يُعد استخدام التطبيق موافقةً كاملة على هذه الشروط والأحكام.</p>
+        <p>وفي حال عدم الموافقة عليها، يُرجى عدم استخدام التطبيق.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">٢. الوصول إلى التطبيق</div>
+        <p>يتوفر التطبيق مجانًا للمستخدمين الذين يمتلكون جهازًا متوافقًا واتصالًا بالإنترنت.</p>
+        <p>وقد تتطلب بعض الخدمات تسجيل الدخول أو إنشاء حساب.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">٣. استخدام التطبيق</div>
+        <p>يلتزم المستخدم بما يلي:</p>
+        <ul>
+          <li>استخدام التطبيق وفقًا للقوانين والأنظمة المعمول بها.</li>
+          <li>عدم تعطيل أو إساءة استخدام خدمات التطبيق.</li>
+          <li>عدم استخدام التطبيق في أي نشاط غير قانوني أو احتيالي.</li>
+          <li>احترام حقوق الوكالة وحقوق المستخدمين الآخرين.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">٤. الخدمات المقدمة</div>
+        <p>يتيح التطبيق للمستخدمين:</p>
+        <ul>
+          <li>الاطلاع على الأخبار.</li>
+          <li>الوصول إلى المنشورات والإحصائيات.</li>
+          <li>تحميل التقارير والوثائق الرسمية.</li>
+          <li>التعرف على الخدمات التي تقدمها الوكالة.</li>
+          <li>استخدام وحدات جمع البيانات والاستبيانات حسب الصلاحيات الممنوحة.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">٥. حساب المستخدم</div>
+        <p>في حال تطلبت بعض الخدمات إنشاء حساب، فإن المستخدم يتحمل مسؤولية الحفاظ على سرية بيانات تسجيل الدخول، كما يتحمل مسؤولية جميع الأنشطة التي تتم باستخدام حسابه.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">٦. حماية البيانات الشخصية</div>
+        <p>تُستخدم البيانات الشخصية فقط لضمان حسن سير التطبيق وتحسين الخدمات المقدمة.</p>
+        <p>وتلتزم ANSADE باتخاذ التدابير المناسبة لحماية بيانات المستخدمين وضمان سريتها.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">٧. الملكية الفكرية</div>
+        <p>جميع النصوص والصور والشعارات والمنشورات والتقارير والرسوم البيانية والوثائق الموجودة داخل التطبيق محمية بموجب حقوق الملكية الفكرية، وتعود ملكيتها إلى ANSADE أو أصحاب الحقوق المعنيين.</p>
+        <p>ولا يجوز نسخها أو إعادة استخدامها دون إذن أو بما يخالف القوانين.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">٨. المسؤولية</div>
+        <p>تتولى شركة selamPay تطوير التطبيق وصيانته من الناحية التقنية.</p>
+        <p>وتتحمل ANSADE مسؤولية المحتوى الرسمي المنشور داخل التطبيق.</p>
+        <p>ولا تتحمل شركة selamPay أي مسؤولية عن مشاكل الاتصال بالإنترنت أو عن أي استخدام غير صحيح أو غير مطابق للتطبيق من قبل المستخدم.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">٩. تعديل الشروط والأحكام</div>
+        <p>تحتفظ ANSADE بحق تعديل هذه الشروط والأحكام في أي وقت.</p>
+        <p>وسيتم نشر أحدث نسخة داخل التطبيق.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">١٠. التواصل</div>
+        <p>لأي استفسار يتعلق بهذه الشروط والأحكام أو بتطبيق My ANSADE، يرجى التواصل مع:</p>
+        <p>الوكالة الوطنية للإحصاء والديموغرافيا والتحليل الاقتصادي (ANSADE)</p>
+        <p>🌐 الموقع الإلكتروني: <strong>https://ansade.mr</strong></p>
+        <p>📧 البريد الإلكتروني: <strong>info@ansade.mr</strong></p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">الإقرار</div>
+        <p>باستخدامك لتطبيق My ANSADE، فإنك تقر بأنك قرأت هذه الشروط والأحكام وفهمتها ووافقت عليها، كما تلتزم بالامتثال لها عند استخدام التطبيق والخدمات التي تقدمها ANSADE.</p>
+      </div>
+
+    </div>
+
+    <!-- ========== VERSION FRANÇAISE ========== -->
+    <div id="content-fr" class="lang-version lang-fr" role="tabpanel">
+
+      <div class="card">
+        <div class="card-title">Bienvenue sur My ANSADE</div>
+        <p>L'application My ANSADE est développée par la société selamPay pour le compte de l'Agence Nationale de la Statistique, de la Démographie et de l'Analyse Économique (ANSADE).</p>
+        <p>Elle permet aux utilisateurs d'accéder aux services numériques, aux publications, aux statistiques, aux enquêtes et aux informations officielles de l'ANSADE.</p>
+        <p>En utilisant cette application, vous acceptez les présents Termes et Conditions.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">1. Acceptation des Termes et Conditions</div>
+        <p>L'utilisation de l'application implique l'acceptation pleine et entière des présents Termes et Conditions.</p>
+        <p>Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser l'application.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">2. Accès à l'application</div>
+        <p>L'application est accessible gratuitement aux utilisateurs disposant d'un appareil compatible et d'une connexion Internet.</p>
+        <p>Certaines fonctionnalités peuvent nécessiter une authentification.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">3. Utilisation de l'application</div>
+        <p>L'utilisateur s'engage à :</p>
+        <ul>
+          <li>Utiliser l'application conformément aux lois et règlements en vigueur.</li>
+          <li>Ne pas perturber ou compromettre le fonctionnement de l'application.</li>
+          <li>Ne pas utiliser les services à des fins frauduleuses ou illicites.</li>
+          <li>Respecter les droits de l'ANSADE et des autres utilisateurs.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">4. Services proposés</div>
+        <p>L'application permet notamment de :</p>
+        <ul>
+          <li>Consulter les actualités de l'ANSADE.</li>
+          <li>Accéder aux publications et rapports statistiques.</li>
+          <li>Télécharger des documents officiels.</li>
+          <li>Consulter les offres de services.</li>
+          <li>Accéder aux modules de collecte et d'enquêtes selon les autorisations accordées.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">5. Compte utilisateur</div>
+        <p>Lorsque certaines fonctionnalités nécessitent un compte, l'utilisateur est responsable de la confidentialité de ses identifiants ainsi que des activités réalisées avec son compte.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">6. Protection des données personnelles</div>
+        <p>Les données personnelles collectées sont utilisées uniquement pour assurer le bon fonctionnement de l'application et améliorer les services proposés.</p>
+        <p>L'ANSADE met en œuvre les mesures nécessaires afin d'assurer leur sécurité et leur confidentialité.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">7. Propriété intellectuelle</div>
+        <p>Les textes, images, logos, publications, rapports, documents et tout autre contenu disponible dans l'application sont protégés par les droits de propriété intellectuelle et demeurent la propriété de l'ANSADE ou de leurs titulaires respectifs.</p>
+        <p>Toute reproduction ou utilisation non autorisée est interdite.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">8. Responsabilité</div>
+        <p>La société selamPay assure le développement technique et la maintenance de l'application.</p>
+        <p>L'ANSADE demeure responsable des contenus officiels publiés dans l'application.</p>
+        <p>La société selamPay ne peut être tenue responsable des problèmes liés à la connexion Internet ni d'une utilisation incorrecte ou non conforme de l'application par l'utilisateur.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">9. Modification des Termes et Conditions</div>
+        <p>L'ANSADE se réserve le droit de modifier les présents Termes et Conditions à tout moment.</p>
+        <p>La version la plus récente sera disponible dans l'application.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">10. Contact</div>
+        <p>Pour toute question concernant les présents Termes et Conditions ou l'application My ANSADE, veuillez contacter :</p>
+        <p>Agence Nationale de la Statistique, de la Démographie et de l'Analyse Économique (ANSADE)</p>
+        <p>🌐 Site web : <strong>https://ansade.mr</strong></p>
+        <p>📧 E-mail : <strong>info@ansade.mr</strong></p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Déclaration finale</div>
+        <p>En utilisant My ANSADE, vous reconnaissez avoir lu, compris et accepté les présents Termes et Conditions. Vous vous engagez à respecter les règles applicables lors de l'utilisation de l'application ainsi que des services proposés par l'ANSADE.</p>
+      </div>
+
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <div class="footer">
+      &copy; 2026 selamPay &mdash; My ANSADE. Tous droits réservés.
+    </div>
+
+  </div>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btns = document.querySelectorAll('.lang-btn');
+      const titleEl = document.getElementById('page-title');
+      const updateEl = document.getElementById('last-update');
+
+      // Translations
+      const translations = {
+        title: {
+          ar: 'الشروط والأحكام',
+          fr: 'Termes et Conditions'
+        },
+        update: {
+          ar: 'آخر تحديث: يوليو 2026',
+          fr: 'Dernière mise à jour : Juillet 2026'
+        }
+      };
+
+      function switchLang(lang) {
+        // Update button states
+        btns.forEach(function(btn) {
+          const isActive = btn.dataset.lang === lang;
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('aria-selected', isActive);
+        });
+
+        // Show / hide content
+        document.querySelectorAll('.lang-version').forEach(function(el) {
+          el.classList.toggle('visible', el.id === 'content-' + lang);
+        });
+
+        // Update header translations
+        titleEl.textContent = translations.title[lang];
+
+        // Update last-update date
+        updateEl.textContent = translations.update[lang];
+
+        // Set html lang and dir attributes
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+      }
+
+      // Click handlers
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = this.dataset.lang;
+          switchLang(lang);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
